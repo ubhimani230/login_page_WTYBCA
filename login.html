@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Login Page</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Glassmorphism Card Container */
+        .login-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 40px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Typography */
+        h2 {
+            color: #f8fafc;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        /* Floating Label Input Groups */
+        .input-group {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px 16px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            outline: none;
+            color: #f8fafc;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
+        }
+
+        .input-group label {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+            pointer-events: none;
+            transition: all 0.25s ease;
+        }
+
+        /* Interactive States for Inputs & Labels */
+        .input-group input:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+        }
+
+        /* Floats label to the top when focused or not empty */
+        .input-group input:focus ~ label,
+        .input-group input:not(:placeholder-shown) ~ label {
+            top: 0;
+            font-size: 0.75rem;
+            padding: 0 6px;
+            background: #1e293b;
+            color: #38bdf8;
+        }
+
+        /* Remember Me & Forgot Password Layout */
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            margin-bottom: 28px;
+        }
+
+        .remember-me {
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .remember-me input {
+            accent-color: #38bdf8;
+            cursor: pointer;
+        }
+
+        .forgot-password {
+            color: #38bdf8;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .forgot-password:hover {
+            color: #0ea5e9;
+            text-decoration: underline;
+        }
+
+        /* Action Button */
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: #38bdf8;
+            color: #0f172a;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background: #0ea5e9;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Bottom Signup Prompt */
+        .signup-prompt {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 28px;
+        }
+
+        .signup-prompt a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .signup-prompt a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <h2>Welcome Back</h2>
+        <p class="subtitle">Please sign in to access your account</p>
+
+        <form action="#" class="login-form">
+            <!-- Email Input -->
+            <div class="input-group">
+                <input type="email" required placeholder=" ">
+                <label>Email Address</label>
+            </div>
+
+            <!-- Password Input -->
+            <div class="input-group">
+                <input type="password" required placeholder=" ">
+                <label>Password</label>
+            </div>
+
+            <!-- Options -->
+            <div class="form-options">
+                <label class="remember-me">
+                    <input type="checkbox"> Remember me
+                </label>
+                <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Sign In</button>
+        </form>
+
+        <!-- Footer Link -->
+        <p class="signup-prompt">Don't have an account? <a href="#">Create one</a></p>
+    </div>
+
+</body>
+</html>
