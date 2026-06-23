@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Account</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Glassmorphism Card Container */
+        .signup-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 40px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Typography */
+        h2 {
+            color: #f8fafc;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        /* Form Layout Grid */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        /* Floating Label Input Groups */
+        .input-group {
+            position: relative;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px 16px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            outline: none;
+            color: #f8fafc;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
+        }
+
+        .input-group label {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+            pointer-events: none;
+            transition: all 0.25s ease;
+        }
+
+        /* Interactive States for Inputs & Labels */
+        .input-group input:focus {
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+        }
+
+        /* Floats label to the top when focused or not empty */
+        .input-group input:focus ~ label,
+        .input-group input:not(:placeholder-shown) ~ label {
+            top: 0;
+            font-size: 0.75rem;
+            padding: 0 6px;
+            background: #1e293b;
+            color: #38bdf8;
+        }
+
+        /* Terms and Conditions Checkbox */
+        .terms-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-bottom: 28px;
+            cursor: pointer;
+            line-height: 1.4;
+        }
+
+        .terms-container input {
+            accent-color: #38bdf8;
+            cursor: pointer;
+            margin-top: 2px;
+        }
+
+        .terms-container a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        .terms-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* Action Button */
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: #38bdf8;
+            color: #0f172a;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background: #0ea5e9;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Bottom Login Prompt */
+        .login-prompt {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 28px;
+        }
+
+        .login-prompt a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .login-prompt a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Breakpoint for Name Fields */
+        @media (max-width: 400px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="signup-card">
+        <h2>Get Started</h2>
+        <p class="subtitle">Create your account to join us</p>
+
+        <form action="#" class="signup-form">
+            <div class="form-grid">
+                <!-- First Name Input -->
+                <div class="input-group">
+                    <input type="text" required placeholder=" ">
+                    <label>First Name</label>
+                </div>
+
+                <!-- Last Name Input -->
+                <div class="input-group">
+                    <input type="text" required placeholder=" ">
+                    <label>Last Name</label>
+                </div>
+
+                <!-- Email Input -->
+                <div class="input-group full-width">
+                    <input type="email" required placeholder=" ">
+                    <label>Email Address</label>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-group full-width">
+                    <input type="password" required minlength="8" placeholder=" ">
+                    <label>Password</label>
+                </div>
+            </div>
+
+            <!-- Terms and Conditions -->
+            <label class="terms-container">
+                <input type="checkbox" required>
+                <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+            </label>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Create Account</button>
+        </form>
+
+        <!-- Footer Link -->
+        <p class="login-prompt">Already have an account? <a href="#">Sign in</a></p>
+    </div>
+
+</body>
+</html>
